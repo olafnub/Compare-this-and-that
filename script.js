@@ -6,22 +6,20 @@ let buildArray = [];
 let array2 = ["this 12, and wa, that12"];
 
 string1Array.forEach((x, i) => {
-if (x == ",") {
+
+  if (x != "," || i !=string1Array.length-1) {
+    buildWord += x;
+  }
+  else if (x == " " && string1Array[i-1] == ",") {
+    x++;
+  }
+  else {
   buildArray.push(buildWord);
   buildWord = "";
-  } 
-else if (x == " " && string1Array[i-1] == ",") {
-        x++;
-}
-else {
-    buildWord += x;
-    }
-  
- if (i == string1Array.length-1) {
-    buildArray.push(buildWord);
   }
-  
+
   });
+
   checkeEach();
   function checkeEach() {
     buildArray.forEach(x => {

@@ -5,20 +5,20 @@ let buildArray = [];
 
 let array2 = ["this 12, and wa, that12"];
 
-string1Array.forEach((x, i) => {
+  for (let i = 0; i <= string1Array.length; i++) {
 
-  if (x != "," || i !=string1Array.length-1) {
-    buildWord += x;
+  if (string1Array[i] == " " && string1Array[i-1] == ",") {
+    
   }
-  else if (x == " " && string1Array[i-1] == ",") {
-    x++;
+  else if (string1Array[i] != "," && i != string1Array.length) {
+    buildWord += string1Array[i];
   }
   else {
-  buildArray.push(buildWord);
+  buildArray.push(buildWord.toUpperCase());
   buildWord = "";
   }
+}
 
-  });
 
   checkeEach();
   function checkeEach() {

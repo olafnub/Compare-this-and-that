@@ -1,7 +1,8 @@
 let string1 = "This 12, and 12 and, that";
 let string1Array = [...string1];
 let buildWord = "";
-let buildArray = [];
+let buildArray1 = [];
+let buildArray2 = [];
 
 let array2 = ["this 12, and wa, that12"];
 
@@ -19,10 +20,12 @@ let array2 = ["this 12, and wa, that12"];
   }
 }
 
+function compareArray() {
+  
+}
+
 
   checkeEach();
   function checkeEach() {
-    buildArray.forEach(x => {
-        console.log(x);
-    })
+    console.log(buildArray);
   }

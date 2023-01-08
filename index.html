@@ -13,13 +13,32 @@
         <section class="head"> <!-- Create merge delete branch https://youtu.be/8x7QcF9LG7I--> <!-- Learn Git rebase vs merge https://youtu.be/7Mh259hfxJg -->
             <h3>Welcome to compare this & that</h3>
             <p>This website was made to compare two or more ingredients you have found online to find the difference in them</p>
-            <p>Instead of having to manually go through each bottle, <strong>Copy&Paste</strong> the ingredients you have and type in the seperation for each ingredient</p>
-            <p>And you should find the odd one out!</p>
-            <p>Made for peolpe who might need it to check key ingredients before purchasing for sensitive skin, </p>
+            <p>Instead of having to manually go through the long list in each product to find a difference when shopping, <strong>Copy&Paste</strong> the ingredients you have and type in the seperation for each ingredient</p>
+            <p>And you should find the odd ones out! (+ingredients that are similar)</p>
+            <p>Made because I didn't want to go through the hassle of checking ingredients in each bottle to see what would/wouldn't work for skin</p>
         </section>
 
         <section class="input">
-            
+            <div class="inputs">
+                <label for="firstInput">One side of ingredients</label>
+                <textarea id="firstInput" placeholder="paste first copy in here"></textarea>
+                <label for="secondInput">Other side of ingredients (copy & paste)</label>
+                <textarea id="secondInput" placeholder="paste second copy in here"></textarea>
+            </div>
+            <div class="seperation">
+                <label for="seperation">Enter seperation</label>
+                <input type="text" id="seperation" placeholder="i.e , or ･">
+                
+                <details>
+                    <summary>More on seperation</summary>
+                    Some websites use commas or dots for seperating each ingredient
+                    <br>
+                    <details>
+                        <summary>img</summary>
+                        <img width="240px" src="sephora.png">
+                    </details>
+                </details>
+            </div>
         </section>
     </main>
 </body>

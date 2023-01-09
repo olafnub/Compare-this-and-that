@@ -12,7 +12,6 @@ body {
     display: grid;
     grid-template-columns: 3fr 3fr;
     gap: 2rem;
-    /* border: 2px solid green; */
 }
 textarea {
     border-top: 2px solid green;
@@ -28,9 +27,6 @@ textarea:active {
 }
 details {
     width: 240px;
-}
-.input {
-    margin-top: 4rem;
 }
 #firstInput, #secondInput {
     text-align: center;

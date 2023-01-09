@@ -19,25 +19,43 @@
         </section>
 
         <section class="input">
-            <div class="inputs">
-                <label for="firstInput">One side of ingredients</label>
-                <textarea id="firstInput" placeholder="paste first copy in here"></textarea>
-                <label for="secondInput">Other side of ingredients (copy & paste)</label>
-                <textarea id="secondInput" placeholder="paste second copy in here"></textarea>
+            <div class="top-input">
+                <div class="firstInput">
+                    <label for="firstInput">One side of ingredients</label>
+                    <input type="text" id="firstInput" placeholder="name">
+                    <textarea placeholder="paste first copy in here"></textarea>
+                </div>
+                <div class="secondInput">
+                    <label for="secondInput">Other side of ingredients (copy & paste)</label>
+                    <input type="text" id="secondInput" placeholder="name">
+                    <textarea placeholder="paste second copy in here"></textarea>
+                </div>
             </div>
             <div class="seperation">
-                <label for="seperation">Enter seperation</label>
-                <input type="text" id="seperation" placeholder="i.e , or ･">
+                <label for="seperation">Enter seperation (i.e , or ･)</label>
+                <input type="text" id="seperation">
                 
                 <details>
                     <summary>More on seperation</summary>
                     Some websites use commas or dots for seperating each ingredient
                     <br>
+                    See example below
+                    <br>
                     <details>
-                        <summary>img</summary>
+                        <summary>example</summary>
                         <img width="240px" src="sephora.png">
+                        For this sephora product, you would put a , in the seperation textbox
                     </details>
                 </details>
+            </div>
+        </section>
+
+        <section class="results">
+            <div id="similarMatches">
+                <pre></pre>
+            </div>
+            <div id="differentMatches">
+                <pre></pre>
             </div>
         </section>
     </main>

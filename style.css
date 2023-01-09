@@ -1,0 +1,42 @@
+body {
+    background: white;
+}
+.input, .firstInput, .secondInput{
+    display: flex;
+    text-align:center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.top-input {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    gap: 2rem;
+    /* border: 2px solid green; */
+}
+textarea {
+    border-top: 2px solid green;
+    width: 300px;
+    height: 300px;
+    resize: none;
+}
+textarea:active {
+    border: none;
+}
+#seperation {
+    width: 10px;
+}
+details {
+    width: 240px;
+}
+.input {
+    margin-top: 4rem;
+}
+#firstInput, #secondInput {
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .top-input {
+        grid-template-columns: 1fr;
+    }
+}

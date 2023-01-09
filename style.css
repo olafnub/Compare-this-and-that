@@ -23,7 +23,7 @@ textarea {
 textarea:active {
     border: none;
 }
-#seperation {
+#firstSeperation, #secondSeperation {
     width: 10px;
 }
 details {

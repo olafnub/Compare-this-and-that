@@ -5,13 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparing</title>
-    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <main>
+        <!-- Navbar -->
+        <div class="nav navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container">
+                <a href="" class="navbar-brand">Welcome to Compare This & That</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#welcome" class="nav-link">Welcome</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#input" class="nav-link">Input your lists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#results" class="nav-link">Check your results</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
         <section class="head"> <!-- Create merge delete branch https://youtu.be/8x7QcF9LG7I--> <!-- Learn Git rebase vs merge https://youtu.be/7Mh259hfxJg -->
-            <h3>Welcome to compare this & that</h3>
             <p>This website was simply made to compare two list of ingredients you've found online and want to find the difference in them</p>
             <p>Instead of having to manually go through the long list of each product when shopping, just <strong>Copy&Paste</strong> both ingredients and inform the seperation used for each ingredient</p>
             <p>And you should find the odd ones out! (+ingredients that are similar)</p>
@@ -22,14 +48,14 @@
         <section class="input">
             <div class="top-input">
                 <div class="firstInput">
-                    <label for="firstInput">One side of ingredients</label>
-                    <input type="text" id="firstInput" placeholder="name">
+                    <label for="firstInputTitle">One side of ingredients</label>
+                    <input type="text" id="firstInputTitle" placeholder="name">
                     <textarea placeholder="paste first copy in here"></textarea>
                     <input type="text" id="firstSeperation" placeholder=",･">
                 </div>
                 <div class="secondInput">
-                    <label for="secondInput">Other side of ingredients (copy & paste)</label>
-                    <input type="text" id="secondInput" placeholder="name">
+                    <label for="secondInputTitle">Other side of ingredients (copy & paste)</label>
+                    <input type="text" id="secondInputTitle" placeholder="name">
                     <textarea placeholder="paste second copy in here"></textarea>
                     <input type="text" id="secondSeperation" placeholder=",･">
                 </div>
@@ -50,6 +76,7 @@
                     </details>
                 </details>
             </div>
+            <button id="submit">Submit</button>
         </section>
 
         <section class="results">
@@ -62,5 +89,7 @@
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

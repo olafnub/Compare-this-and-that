@@ -33,4 +33,7 @@ details {
     .top-input {
         flex-direction: column;
     }
+    body::before {
+        height: 100px;
+    }
 }

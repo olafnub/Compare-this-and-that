@@ -12,9 +12,9 @@
 <body>
     <main>
         <!-- Navbar -->
-        <div class="nav navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="nav navbar navbar-expand-lg bg-dark navbar-dark py-3">
             <div class="container">
-                <a href="" class="navbar-brand">Welcome to Compare This & That</a>
+                <a href="" class="navbar-brand">Welcome to <span class="text-warning">Compare This & That</span></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="#welcome" class="nav-link">Welcome</a>
+                            <a href="#home" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="#input" class="nav-link">Input your lists</a>
@@ -37,46 +37,56 @@
         </div>
 
         <!-- Header -->
-        <section class="head"> <!-- Create merge delete branch https://youtu.be/8x7QcF9LG7I--> <!-- Learn Git rebase vs merge https://youtu.be/7Mh259hfxJg -->
-            <p>This website was simply made to compare two list of ingredients you've found online and want to find the difference in them</p>
-            <p>Instead of having to manually go through the long list of each product when shopping, just <strong>Copy&Paste</strong> both ingredients and inform the seperation used for each ingredient</p>
-            <p>And you should find the odd ones out! (+ingredients that are similar)</p>
-            <p>Made because I didn't want to go through the hassle of checking ingredients in each bottle to see what would/wouldn't work for skin</p>
+        <section class="bg-dark text-light p-3"> <!-- Create merge delete branch https://youtu.be/8x7QcF9LG7I--> <!-- Learn Git rebase vs merge https://youtu.be/7Mh259hfxJg -->
+            <div class="container">
+                <div class="d-sm-flex-column">
+                    <h1>Home</h1>
+                    <p class="lead my-4">This website was simply made to compare two list of ingredients you've found online and want to find the difference in them
+                    <br><br>Instead of having to manually go through the long list of each product when shopping, just <span class="text-warning">Copy&Paste</span> both ingredients into the textbox below and add in the seperation used for each ingredient
+                    <br><br>And you should find the odd ones out! (+ingredients that are similar)
+                    Made because I didn't want to go through the hassle of checking ingredients in each bottle to see what would/wouldn't work for skin</p>
+                    <a href="#input"><button class="btn btn-primary btn-lg">Test it out!</button></a>
+                </div>
+            </div>
         </section>
 
-        <h3>Input</h3>
-        <section class="input">
-            <div class="top-input">
-                <div class="firstInput">
-                    <label for="firstInputTitle">One side of ingredients</label>
-                    <input type="text" id="firstInputTitle" placeholder="name">
-                    <textarea placeholder="paste first copy in here"></textarea>
-                    <input type="text" id="firstSeperation" placeholder=",･">
-                </div>
-                <div class="secondInput">
-                    <label for="secondInputTitle">Other side of ingredients (copy & paste)</label>
-                    <input type="text" id="secondInputTitle" placeholder="name">
-                    <textarea placeholder="paste second copy in here"></textarea>
-                    <input type="text" id="secondSeperation" placeholder=",･">
-                </div>
+        <section class="p-3">
+            <div class="container">
+                <h1>Input</h1>
             </div>
-            <div class="seperation">
-                <label for="seperation">Enter seperation (i.e , or ･)</label>
-                
-                <details>
-                    <summary>More on seperation</summary>
-                    Some websites use commas or dots for seperating each ingredient
-                    <br>
-                    See example below
-                    <br>
+            <div class="input">
+                <div class="top-input container">
+                    <div class="firstInput">
+                        <label for="firstInputTitle">One side of ingredients</label>
+                        <input type="text" id="firstInputTitle" placeholder="name">
+                        <textarea placeholder="paste first copy in here"></textarea>
+                        <input type="text" id="firstSeperation" placeholder=",･">
+                    </div>
+                    <div class="secondInput">
+                        <label for="secondInputTitle">Other side of ingredients (copy & paste)</label>
+                        <input type="text" id="secondInputTitle" placeholder="name">
+                        <textarea placeholder="paste second copy in here"></textarea>
+                        <input type="text" id="secondSeperation" placeholder=",･">
+                    </div>
+                </div>
+                <div class="seperation">
+                    <label for="seperation">Enter seperation (i.e , or ･)</label>
+                    
                     <details>
-                        <summary>example</summary>
-                        <img width="240px" src="sephora.png">
-                        For this sephora product, you would put a , in the seperation textbox
+                        <summary>More on seperation</summary>
+                        Some websites use commas or dots for seperating each ingredient
+                        <br>
+                        See example below
+                        <br>
+                        <details>
+                            <summary>example</summary>
+                            <img width="240px" src="sephora.png">
+                            For this sephora product, you would put a , in the seperation textbox
+                        </details>
                     </details>
-                </details>
+                </div>
+                <button type="button" class="btn btn-dark" id="submit">Submit</button>
             </div>
-            <button id="submit">Submit</button>
         </section>
 
         <section class="results">

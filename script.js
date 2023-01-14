@@ -12,8 +12,8 @@ title2 = document.getElementById("secondInputTitle").value;
   returnBuiltArrays(title2, string2Array, buildArray2);
 }
 
-let string1 = "This 12, and 12 and, that, same";
-let string2 = "and Was, bY Then, Straight 43%, same";
+let string1 = "This 12, and 12 and, that, same, sure";
+let string2 = "and Was, bY Then, Straight 43%, same, sure";
 let string1Array = [...string1];
 let string2Array = [...string2];
 let buildWord = "";
@@ -22,6 +22,7 @@ let array2Title = "";
 let buildArray1 = [];
 let buildArray2 = [];
 let similarMatches = [];
+let differentMatch = [];
 let lock=0;
 
 function returnBuiltArrays(title, stringArray, buildArray) {
@@ -41,7 +42,7 @@ function returnBuiltArrays(title, stringArray, buildArray) {
   lock++;
 
   if (lock == 2) {
-    compareArray(buildArray1);
+    compareArray();
   }
 } 
 
@@ -51,9 +52,14 @@ let box2 = document.querySelector("#differentMatches pre");
 function compareArray() {
   for (let j = 0; j < buildArray2.length; j++) {
     buildArray1.filter(n => n===buildArray2[j])
-      .forEach(n => similarMatches.push(" " + n));
+      .forEach(n => similarMatches.push(n));
   }
+  buildArray1.filter(n => n != similarMatches)
+  .forEach(n => differentMatch.push(n));
+  
+
   box1.textContent = similarMatches;
+  box2.textContent = differentMatch.join();
 }
 
 

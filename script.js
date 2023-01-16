@@ -4,6 +4,7 @@ form.addEventListener('submit', function(event) {
   getUserInput();
   getArrays();
   getSimilar();
+  getDiffference();
   document.forms[0].reset();
 })
 let firstInputTitle;
@@ -28,8 +29,12 @@ function getUserInput() {
 let arrayFirst;
 let arraySecond;
 function getArrays() {
-let intoArray1 = firstInputList.split(firstSeperation).sort();
-let intoArray2 = secondInputList.split(secondSeperation).sort();
+
+let cappitalizeString1 = firstInputList.toUpperCase();
+let cappitalizeString2 = secondInputList.toUpperCase();
+
+let intoArray1 = cappitalizeString1.split(firstSeperation).sort();
+let intoArray2 = cappitalizeString2.split(secondSeperation).sort();
 
 arrayFirst = intoArray1.map(x => x.trim());
 arraySecond = intoArray2.map(x => x.trim());
@@ -39,14 +44,15 @@ arraySecond = intoArray2.map(x => x.trim());
 let buildSimilar = [];
 let buildDifferent = [];
 function getSimilar() {
-  for (let i = 0; i < arraySecond.length; i++) {
-    arrayFirst.filter(n => n === arraySecond[i]).forEach(x => {
-      buildSimilar.push(x);
-    })
+    arrayFirst.filter(x => arraySecond.includes(x))
+    .forEach(x => buildSimilar.push(x));
+}
+function getDiffference() {
+  arrayFirst.filter(x => !arraySecond.includes(x))
+    .forEach(x => buildDifferent.push(x));
     debugger;
 }
-  
-}
+
 
 // DELETE
 document.getElementById("firstInputTitle").value = "Ultimate Sun Protection Lotion";

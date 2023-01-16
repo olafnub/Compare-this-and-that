@@ -53,6 +53,7 @@
 
         <!-- input -->
         <section id="input" class="p-3">
+            <form id="form">
             <div class="container">
                 <h1>Input</h1>
             </div>
@@ -61,13 +62,13 @@
                     <div class="firstInput">
                         <label for="firstInputTitle">One side of ingredients</label>
                         <input type="text" id="firstInputTitle" placeholder="name">
-                        <textarea id="firstInputList placeholder="paste first copy in here"></textarea>
+                        <textarea id="firstInputList" placeholder="paste first copy in here"></textarea>
                         <input type="text" id="firstSeperation" placeholder=",･">
                     </div>
                     <div class="secondInput">
                         <label for="secondInputTitle">Other side of ingredients (copy & paste)</label>
                         <input type="text" id="secondInputTitle" placeholder="name">
-                        <textarea id="secondInputList placeholder="paste second copy in here"></textarea>
+                        <textarea id="secondInputList" placeholder="paste second copy in here"></textarea>
                         <input type="text" id="secondSeperation" placeholder=",･">
                     </div>
                 </div>
@@ -87,8 +88,9 @@
                         </details>
                     </details>
                 </div>
-                <button type="button" class="btn btn-dark text-warning" id="submit">Submit</button>
+                <input type="submit" class="btn btn-dark text-warning" value="Submit">
             </div>
+        </form>
         </section>
 
         <!-- results -->

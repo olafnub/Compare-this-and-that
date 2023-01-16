@@ -1,65 +1,37 @@
-let submit = document.getElementById("submit");
-submit.addEventListener("click", checkEach);
+const form = document.querySelector("#form");
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  getUserInput();
+  getArrays();
+  document.forms[0].reset();
+})
+let firstInputTitle;
+let secondInputTitle;
+let firstInputList;
+let secondInputList;
+let firstSeperation;
+let secondSeperation;
 
-let title1;
-let title2;
+function getUserInput() {
+  firstInputTitle = document.getElementById("firstInputTitle");
+  secondInputTitle = document.getElementById("secondInputTitle");
 
-function checkEach() {
-title1 = document.getElementById("firstInputTitle").value;
-title2 = document.getElementById("secondInputTitle").value;
+  firstInputList = document.getElementById("firstInputList");
+  secondInputList = document.getElementById("secondInputList");
 
-  returnBuiltArrays(title1, string1Array, buildArray1);
-  returnBuiltArrays(title2, string2Array, buildArray2);
+  firstSeperation = document.getElementById("firstSeperation");
+  secondSeperation = document.getElementById("secondSeperation");
 }
 
-let string1 = "This 12, and 12 and, that, same, sure";
-let string2 = "and Was, bY Then, Straight 43%, same, sure";
-let string1Array = [...string1];
-let string2Array = [...string2];
-let buildWord = "";
-let array1Title = "";
-let array2Title = "";
-let buildArray1 = [];
-let buildArray2 = [];
-let similarMatches = [];
-let differentMatch = [];
-let lock=0;
-
-function returnBuiltArrays(title, stringArray, buildArray) {
-    for (let i = 0; i <= stringArray.length; i++) {
-
-    if (stringArray[i] == " " && stringArray[i-1] == ",") {
-      
-    }
-    else if (stringArray[i] != "," && i != stringArray.length) {
-      buildWord += stringArray[i];
-    }
-    else {
-    buildArray.push(buildWord.toUpperCase());
-    buildWord = "";
-    }
-  }
-  lock++;
-
-  if (lock == 2) {
-    compareArray();
-  }
-} 
-
-let box1 = document.querySelector("#similarMatches pre");
-let box2 = document.querySelector("#differentMatches pre");
-
-function compareArray() {
-  for (let j = 0; j < buildArray2.length; j++) {
-    buildArray1.filter(n => n===buildArray2[j])
-      .forEach(n => similarMatches.push(n));
-  }
-  buildArray1.filter(n => n != similarMatches)
-  .forEach(n => differentMatch.push(n));
-  
-
-  box1.textContent = similarMatches;
-  box2.textContent = differentMatch.join();
+// Arithmetic
+let arrayFirst;
+function getArrays() {
+arrayFirst = firstInputList.value.split(',');
+console.log(arrayFirst);
 }
 
-
+// DELETE
+document.getElementById("firstInputTitle").value = "Ultimate Sun Protection Lotion";
+document.getElementById("secondInputTitle").value = "Lotion SPF 50+ Sunscreen";
+document.getElementById("firstSeperation").value = ",";
+document.getElementById("secondSeperation").value = ",";

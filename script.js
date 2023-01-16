@@ -5,6 +5,8 @@ form.addEventListener('submit', function(event) {
   getArrays();
   getSimilar();
   getDiffference();
+  removeSeperation();
+  outputResults();
   document.forms[0].reset();
 })
 let firstInputTitle;
@@ -47,10 +49,28 @@ function getSimilar() {
     arrayFirst.filter(x => arraySecond.includes(x))
     .forEach(x => buildSimilar.push(x));
 }
+// Compare difference
 function getDiffference() {
   arrayFirst.filter(x => !arraySecond.includes(x))
     .forEach(x => buildDifferent.push(x));
-    debugger;
+}
+
+// Check for non char in beginning
+function removeSeperation() {
+  if (buildSimilar[0] === "") {
+    buildSimilar.shift();
+  }
+  else if (buildDifferent[0] == "") {
+    buildDifferent.shift();
+  }
+}
+// Output for user
+let similarMatches = document.querySelector("#similarMatches pre");
+let differentMatches = document.querySelector("#differentMatches pre");
+
+function outputResults() {
+  similarMatches.textContent = buildSimilar;
+  differentMatches.textContent = buildDifferent;
 }
 
 
@@ -59,3 +79,4 @@ document.getElementById("firstInputTitle").value = "Ultimate Sun Protection Loti
 document.getElementById("secondInputTitle").value = "Lotion SPF 50+ Sunscreen";
 document.getElementById("firstSeperation").value = ",";
 document.getElementById("secondSeperation").value = ",";
+document.getElementById("firstInputList").value = "ITANIUM DIOXIDE 9.1% , Sunscreen ZINC OXIDE 19.3% , Sunscreen INACTIVE INGREDIENTS:DIMETHICONE, WATER, BUTYLENE GLYCOL, GLYCERIN, DIISOPROPYL SEBACATE, POLYMETHYL METHACRYLATE, HYDROGENATED POLYDECENE, PEG-10 DIMETHICONE, CYCLOMETHICONE, PEG-9 POLYDIMETHYLSILOXYETHYL DIMETHICONE, BIS-BUTYLDIMETHICONE POLYGLYCERYL-3, PEG-6, TRIMETHYLSILOXYSILICATE, PEG-32, PEG/PPG-14/7 DIMETHYL ETHER, SCUTELLARIA BAICALENSIS ROOT EXTRACT, RUBUS IDAEUS (RASPBERRY) FRUIT EXTRACT, ALOE BARBADENSIS LEAF EXTRACT, THYMUS SERPILLUM EXTRACT, ALUMINUM DISTEARATE, ALUMINUM HYDROXIDE, HYDROGEN DIMETHICONE, ISOSTEARIC ACID, DISTEARDIMONIUM HECTORITE, HYDRATED SILICA, SODIUM METAPHOSPHATE, TRIETHOXYCAPRYLYLSILANE, STEARIC ACID, DEXTRIN PALMITATE, DISTEARYLDIMONIUM CHLORIDE, TOCOPHEROL, SYZYGIUM JAMBOS LEAF EXTRACT,"

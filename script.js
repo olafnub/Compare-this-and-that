@@ -3,6 +3,7 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
   getUserInput();
   getArrays();
+  getSimilar();
   document.forms[0].reset();
 })
 let firstInputTitle;
@@ -16,18 +17,35 @@ function getUserInput() {
   firstInputTitle = document.getElementById("firstInputTitle");
   secondInputTitle = document.getElementById("secondInputTitle");
 
-  firstInputList = document.getElementById("firstInputList");
-  secondInputList = document.getElementById("secondInputList");
+  firstInputList = document.getElementById("firstInputList").value;
+  secondInputList = document.getElementById("secondInputList").value;
 
-  firstSeperation = document.getElementById("firstSeperation");
-  secondSeperation = document.getElementById("secondSeperation");
+  firstSeperation = document.getElementById("firstSeperation").value;
+  secondSeperation = document.getElementById("secondSeperation").value;
 }
 
-// Arithmetic
+// Switch to arrays
 let arrayFirst;
+let arraySecond;
 function getArrays() {
-arrayFirst = firstInputList.value.split(',');
-console.log(arrayFirst);
+let intoArray1 = firstInputList.split(firstSeperation).sort();
+let intoArray2 = secondInputList.split(secondSeperation).sort();
+
+arrayFirst = intoArray1.map(x => x.trim());
+arraySecond = intoArray2.map(x => x.trim());
+}
+
+// Compare similar
+let buildSimilar = [];
+let buildDifferent = [];
+function getSimilar() {
+  for (let i = 0; i < arraySecond.length; i++) {
+    arrayFirst.filter(n => n === arraySecond[i]).forEach(x => {
+      buildSimilar.push(x);
+    })
+    debugger;
+}
+  
 }
 
 // DELETE
